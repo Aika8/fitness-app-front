@@ -1,11 +1,16 @@
 import React,{Component} from 'react';
 import {Breadcrumbs, Container, Link,Typography} from '@material-ui/core'
 import EService from '../../service';
+import './post.css'
+import { useHistory } from "react-router-dom";
 
 
-function handleClick(event) {
+
+function useHandleClick(event) {
+    let history = useHistory();
     event.preventDefault();
     console.info('You clicked a breadcrumb.');
+    history.goBack();
 }
 
 export default class Post extends Component{
@@ -18,9 +23,6 @@ export default class Post extends Component{
         description: "",
         tags: ""
    }
-
-    
-
    
 	componentDidMount(){
         console.log("mount");
@@ -46,15 +48,15 @@ export default class Post extends Component{
 
 
             return (
-                <div style={{backgroundColor: '#c79288', color: 'white'}}>
-                <Container style={{backgroundColor: '#c79288', color: 'white'}}>
+                <div>
+                <Container >
                         <div class="row">
 
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
 
                                 
-                        <Breadcrumbs aria-label="breadcrumb" className="mt-4" style={{color: 'white'}}>
-                                <Link color="inherit" href="/" onClick={handleClick}>
+                        <Breadcrumbs aria-label="breadcrumb" className="mt-4">
+                                <Link color="inherit" href="/" onClick={useHandleClick}>
                                     Home
                                 </Link>
                                 <Typography>{this.state.title}</Typography>
@@ -64,7 +66,7 @@ export default class Post extends Component{
 
                                 <hr/>
 
-                                <div dangerouslySetInnerHTML={{ __html: this.state.description }}>
+                                <div dangerouslySetInnerHTML={{ __html: this.state.description }} style={{whiteSpace:'pre-line'}}>
                                 </div>
 
                             </div>

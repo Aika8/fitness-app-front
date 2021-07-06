@@ -8,17 +8,22 @@ import PostItem from '../postItem';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useHistory } from 'react-router-dom'
+import InstagramIcon from '@material-ui/icons/Instagram';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import TelegramIcon from '@material-ui/icons/Telegram';
 
 const getDimensions = ele => {
+
+  if(ele){
     const { height } = ele.getBoundingClientRect();
     const offsetTop = ele.offsetTop;
     const offsetBottom = offsetTop + height;
-  
     return {
       height,
       offsetTop,
       offsetBottom,
     };
+  }
   };
 
   const scrollTo = ele => {
@@ -107,7 +112,7 @@ const NavbarComp = () => {
                   <div key ={id}>
                     <Grid style={{marginLeft: '32px', marginBottom: '60px', marginRight:'30px', maxWidth: '473px'}} data-aos="fade-up">
                       <PostItem post={post} OnItemSelected={(ItemId) => {
-                                history.push(`/${ItemId}`);
+                                history.push(`/posts/${ItemId}`);
                         }}/>
                     </Grid>
                   </div>
@@ -160,17 +165,16 @@ const NavbarComp = () => {
       <section className="page-section" ref={aboutRef}>
             <Container maxWidth="lg">
               <div className="text-center">
-                  <h2 className="section-heading text-uppercase">Обо мне</h2>
+                  <h2 className="section-heading text-uppercase">Тренировки не самоцель</h2>
               </div>
               <div className="text-center">
-                <p>Тренировки не самоцель.</p>
                   <p>Это средство, чтобы каждый день были силы пробовать новое,</p>
                   <p>заниматься любимыми хобби, путешествовать и кайфовать от жизни.</p>
               </div>
               <div class="col text-center">
-                  <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                  <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a class="btn btn-dark btn-social mx-2" href="#"><InstagramIcon/></a>
+                  <a class="btn btn-dark btn-social mx-2" href="#"><WhatsAppIcon/></a>
+                  <a class="btn btn-dark btn-social mx-2" href="#"><TelegramIcon/></a>
               </div>
             </Container>
       </section>
@@ -180,7 +184,6 @@ const NavbarComp = () => {
 
           <div className="text-center mb-5">
               <h2 className="section-heading text-uppercase" >Posts</h2>
-              <h3 className="section-subheading">Lorem ipsum dolor sit amet consectetur.</h3>
           </div>
           <Container maxWidth="xl" style={{width: '87%'}}>
             <div className="row mx-auto">

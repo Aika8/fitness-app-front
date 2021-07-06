@@ -3,6 +3,7 @@ import EService from '../../service';
 import {Card,CardActionArea ,CardMedia,CardContent, Typography, CardActions} from '@material-ui/core'
 import {withRouter} from 'react-router-dom'
 
+
 class CardItem extends Component{
     service = new EService();
 
@@ -30,9 +31,8 @@ class CardItem extends Component{
                         <Typography gutterBottom variant="h4" style={{fontSize: '2rem', fontWeight: '600', fontFamily:'Poppins'}}>
                             {this.state.title}
                         </Typography>
-                        <Typography variant="body2" component="p" style={{lineHeight: 'inherit', fontWeight: '600', fontFamily:'Poppins'}}>
-                            {this.state.brief}
-                        </Typography>
+                        <Typography variant="body2" component="p" style={{lineHeight: 'inherit', fontWeight: '600', fontFamily:'Poppins',whiteSpace:'pre-line'}} dangerouslySetInnerHTML={{ __html: this.state.brief }}>
+                          </Typography>
                         </CardContent>
                     </CardActionArea>
                     <CardActions>

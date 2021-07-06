@@ -1,0 +1,22 @@
+.MuiFormLabel-root{
+    color:azure
+}
+
+.MuiInputLabel-formControl{
+    color:azure
+}
+
+.MuiFormLabel-root.MuiInputLabel-root{
+    color:azure
+}
+
+img {
+    max-width: 100%;
+    height:auto;
+}
+
+iframe {
+    max-width: 100%;
+    min-height: 400px;
+    height:auto;
+}
