@@ -10,9 +10,11 @@ section {
 }
 .motivation h2 {
     font-size: 3em;
+    color: black;
 }
 
 .motivation p {
     margin-top: 0.5em;
     font-size: 1.1em;
+    color: black;
 }

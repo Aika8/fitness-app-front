@@ -14,6 +14,9 @@ export const getAllPosts = async() => {
   return await axiosInstanse.get(`/api/posts`);
 }
 
+export const getPost = async(id) => {
+  return await axiosInstanse.get(`/api/post?id=${id}`);
+}
 
 // class EService{
 
