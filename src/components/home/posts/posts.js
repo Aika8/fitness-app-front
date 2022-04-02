@@ -7,7 +7,7 @@ const Posts = () => {
     useEffect(() => {
         getAllPosts().then(res=>{
           console.log(res.data);
-          setPosts(res.data);
+          setPosts(res.data.content);
         });
       },  []);
     return (

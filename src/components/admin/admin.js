@@ -1,6 +1,9 @@
 import React from "react";
 import Navbar from "./navbar";
 import Nav from './nav';
+
+import FroalaEditor from "./FroalaEditor.js";
+
 const Admin = () => {
     return (
         <div id="wrapper">
@@ -10,7 +13,7 @@ const Admin = () => {
 
             <div id="content">
                 <Nav/>
-              
+                <FroalaEditor/>
             <div/>
         </div>
         </div>
